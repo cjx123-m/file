@@ -5,7 +5,7 @@
 
 from pandas import DataFrame
 
-from . import step1_dedupe
+from . import step1_dedupe, step2_normalize
 from .common import read_raw
 
 
@@ -14,6 +14,7 @@ def run() -> DataFrame:
     print(f"原始数据: {len(df)} 行 x {df.shape[1]} 列\n")
 
     df = step1_dedupe.clean(df)
+    df = step2_normalize.clean(df)
 
     print(f"\n清洗后: {len(df)} 行")
     return df
