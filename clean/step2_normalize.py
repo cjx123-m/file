@@ -9,7 +9,7 @@ from .common import (
     STATION_NAME_COLUMNS,
 )
 
-# 业务同义词 -> 规范写法。课程标准写法见 common.EXPECTED_CATEGORIES
+# 业务同义词 -> 规范写法；规范取值见 common.EXPECTED_CATEGORIES
 SYNONYMS = {
     "rideable_type": {
         "classic": "classic_bike",
