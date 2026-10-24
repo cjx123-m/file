@@ -5,7 +5,7 @@
 
 from pandas import DataFrame
 
-from . import step1_dedupe, step2_normalize
+from . import step1_dedupe, step2_normalize, step3_convert_types
 from .common import read_raw
 
 
@@ -15,6 +15,7 @@ def run() -> DataFrame:
 
     df = step1_dedupe.clean(df)
     df = step2_normalize.clean(df)
+    df = step3_convert_types.clean(df)
 
     print(f"\n清洗后: {len(df)} 行")
     return df
