@@ -1,0 +1,44 @@
+共享单车 2024-01 空间分析报告
+分析记录数: 183863（占清洗表 77.1%，仅保留起终点都有站点编号、能落到具体桩点的记录）
+桩点数: 760 个
+坐标范围: 纬度 38.7826 ~ 39.1258，经度 -77.3684 ~ -76.8255
+热力网格: 0.004°（约 444 m），有骑行落点的网格 704 个
+平均骑行直线距离: 1.82 km，中位数 1.49 km
+同站借还占比: 3.8%
+OD 对总数: 44236 个，骑行量 ≥ 20 次的高频 OD 对 1231 个
+
+Top 10 起点站点（借车量）:
+   1. Columbus Circle / Union Station：2872 次，净流入 -49
+   2. New Hampshire Ave & T St NW：2379 次，净流入 -11
+   3. 15th & P St NW：1937 次，净流入 -17
+   4. 14th & V St NW：1778 次，净流入 +2
+   5. 5th & K St NW：1732 次，净流入 +12
+   6. Eastern Market Metro / Pennsylvania Ave & 8th St SE：1724 次，净流入 +33
+   7. M St & Delaware Ave NE：1628 次，净流入 -3
+   8. 1st & M St NE：1602 次，净流入 +10
+   9. Massachusetts Ave & Dupont Circle NW：1511 次，净流入 +110
+  10. 8th & O St NW：1472 次，净流入 -11
+
+Top 10 终点站点（还车量）:
+   1. Columbus Circle / Union Station：2823 次，净流入 -49
+   2. New Hampshire Ave & T St NW：2368 次，净流入 -11
+   3. 15th & P St NW：1920 次，净流入 -17
+   4. 14th & V St NW：1780 次，净流入 +2
+   5. Eastern Market Metro / Pennsylvania Ave & 8th St SE：1757 次，净流入 +33
+   6. 5th & K St NW：1744 次，净流入 +12
+   7. M St & Delaware Ave NE：1625 次，净流入 -3
+   8. Massachusetts Ave & Dupont Circle NW：1621 次，净流入 +110
+   9. 1st & M St NE：1612 次，净流入 +10
+  10. 8th & O St NW：1461 次，净流入 -11
+
+Top 10 高频 OD 走廊（图上用箭头可视化）:
+   1. Columbus Circle / Union Station -> 8th & F St NE：243 次，0.88 km，平均 4.2 分钟
+   2. 8th & F St NE -> Columbus Circle / Union Station：211 次，0.88 km，平均 5.9 分钟
+   3. Columbus Circle / Union Station -> 6th & H St NE：194 次，0.66 km，平均 4.2 分钟
+   4. Eastern Market Metro / Pennsylvania Ave & 8th St SE -> Lincoln Park / 13th & East Capitol St NE：153 次，0.93 km，平均 6.7 分钟
+   5. Maryland Ave & E St NE -> Columbus Circle / Union Station：153 次，1.05 km，平均 6.3 分钟
+   6. Columbus Circle / Union Station -> Maryland Ave & E St NE：149 次，1.05 km，平均 5.3 分钟
+   7. 6th & H St NE -> Columbus Circle / Union Station：140 次，0.66 km，平均 5.0 分钟
+   8. 1st & M St NE -> New Jersey Ave & F St NW：119 次，1.09 km，平均 7.6 分钟
+   9. 3rd & G St SE -> Eastern Market Metro / Pennsylvania Ave & 8th St SE：116 次，0.66 km，平均 4.2 分钟
+  10. Lincoln Park / 13th & East Capitol St NE -> Eastern Market Metro / Pennsylvania Ave & 8th St SE：112 次，0.93 km，平均 5.6 分钟
