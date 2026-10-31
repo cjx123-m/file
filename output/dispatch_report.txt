@@ -1,0 +1,27 @@
+共享单车调度投放策略测算报告
+================================================
+输入: A 的清洗结果 -> 需求模型预测；B 的 station_period_flow.csv -> 还入比例。
+策略: 小时末库存低于安全库存时，按缺口从最近的高库存站点调车。
+口径: 调度决策使用预测需求；服务评价使用测试期实际需求。
+
+演示参数（非真实运营参数）:
+  initial_inventory = 3.0
+  capacity = 20.0
+  safety_stock = 3.0
+  donor_target_ratio = 0.75
+  truck_capacity = 12.0
+  max_moves_per_hour = 80.0
+  max_distance_km = 8.0
+  return_factor_floor = 0.25
+  return_factor_cap = 2.5
+
+测试期汇总:
+scenario  actual_demand  served_demand  unmet_demand  lost_returns  service_rate  dispatch_bikes  dispatch_bike_km  dispatch_orders  service_rate_change_pp
+     不调度      61896.000      56888.220      5007.780      1025.513         0.919           0.000             0.000                0                   0.000
+    阈值调度      61896.000      58009.340      3886.660       108.116         0.937        1641.989          5434.462             2010                   1.811
+
+满足率变化: +1.811 个百分点
+调度单数量: 2010；累计移动 1642 辆；载车公里 5434.5 km
+
+说明: 这是策略测算演示，不是整数车辆/路径/人员排班的精确优化。
+生产化时应替换为真实站点容量、车辆初始库存、还车率、车队规模与路网时延。

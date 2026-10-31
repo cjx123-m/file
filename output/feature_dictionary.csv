@@ -1,0 +1,11 @@
+﻿feature,category,description
+hour / weekday / day_of_month,时段,小时、星期与月内日期
+hour_sin / hour_cos / weekday_sin / weekday_cos,时段,周期编码，保留 0 点与 23 点、周日与周一邻近关系
+is_weekend / is_am_peak / is_pm_peak / is_night,时段,周末、早晚高峰、夜间标记
+station_lat / station_lng,空间,站点位置，区分不同需求区域
+station_demand_profile / station_hour_demand_profile,需求历史,仅用训练期估计的站点、站点小时基准需求
+member_ratio_profile / member_ratio_lag_24h,会员类型,训练期会员占比画像与前一日同小时会员占比
+electric_ratio_profile / electric_ratio_lag_24h,车辆类型,训练期电动车占比画像与前一日同小时电动车占比
+demand_lag_1h / 24h / 168h,需求历史,一小时前、前一日同小时、上周同小时需求
+demand_rolling_24h,需求历史,过去 24 小时平均需求
+city_demand_lag_1h / city_demand_lag_24h,城市需求,全城前一小时/前一日同小时总需求
