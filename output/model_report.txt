@@ -1,0 +1,31 @@
+共享单车影响因子与需求预测报告
+================================================
+目标: 站点 × 小时借出骑行量 demand
+样本: 面板 563952 行，训练 436608 行，测试 127344 行
+测试期: 2024-01-25 00:00:00 ~ 2024-01-31 00:00:00
+特征: 25 个（会员类型、车辆类型、时段、空间与历史需求）
+
+模型对比（按 MAE 升序）:
+               model  train_seconds   rows    mae   rmse      r2   wape  mae_positive  mean_actual  mean_prediction  is_best
+HistGradientBoosting         7.2088 127344 0.3658 0.8868  0.5477 0.7526        1.2801       0.4861           0.3641     True
+        RandomForest        69.9638 127344 0.3665 0.8840  0.5506 0.7540        1.2698       0.4861           0.3624    False
+               Ridge         2.1078 127344 0.4385 1.7534 -0.7683 0.9022        1.4829       0.4861           0.3708    False
+        BaselineMean         0.0627 127344 0.5860 1.3547 -0.0556 1.2057        2.0893       0.4861           0.1752    False
+
+最佳模型: HistGradientBoosting
+评价说明: MAE/RMSE 单位均为“次/站点小时”；WAPE 为绝对误差总量占实际需求总量比例。
+泄漏控制: 站点/会员/车型画像仅由训练期估计；当前小时标签不进入特征。
+预测口径: 一小时前需求、前一日同小时等滞后特征可用，属于 one-step-ahead 回测。
+
+特征重要性 Top 10:
+                    feature  importance  share
+station_hour_demand_profile      0.2303 0.6557
+         city_demand_lag_1h      0.0528 0.1505
+         demand_rolling_24h      0.0291 0.0829
+                       hour      0.0101 0.0289
+              demand_lag_1h      0.0079 0.0226
+                    weekday      0.0044 0.0124
+                weekday_sin      0.0031 0.0088
+                   hour_sin      0.0027 0.0076
+                station_lat      0.0025 0.0072
+                   hour_cos      0.0022 0.0063
